@@ -3,12 +3,17 @@ import {Button, Container, Form, FormControl, Nav, Navbar, NavbarBrand, NavLink}
 import logo from "../assets/logo192.png";
 import NavbarToggle from "react-bootstrap/NavbarToggle";
 import NavbarCollapse from "react-bootstrap/NavbarCollapse";
+import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import Home from "../Pages/Home";
+import About from "../Pages/About";
+import Contacts from "../Pages/Contacts";
+import Blog from "../Pages/Blog";
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
         return (
             <div>
-                <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark">
+                <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                     <Container>
                         <NavbarBrand href="/">
                             <img
@@ -38,7 +43,17 @@ export default class Header extends Component {
                         </NavbarCollapse>
                     </Container>
                 </Navbar>
+                <Router>
+                    <Routes>
+                        <Route exact path="/" element={<Home/>} />
+                        <Route exact path="/about" element={<About/>} />
+                        <Route exact path="/contacts" element={<Contacts/>} />
+                        <Route exact path="/blog" element={<Blog/>} />
+                    </Routes>
+                </Router>
             </div>
         );
     }
 }
+
+export default Header;
