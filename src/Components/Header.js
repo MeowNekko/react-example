@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {Button, Container, Form, FormControl, Nav, Navbar, NavbarBrand, NavLink} from "react-bootstrap";
+import {Button, Container, Form, FormControl, Nav, Navbar} from "react-bootstrap";
 import logo from "../assets/logo192.png";
-import NavbarToggle from "react-bootstrap/NavbarToggle";
-import NavbarCollapse from "react-bootstrap/NavbarCollapse";
-import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Contacts from "../Pages/Contacts";
@@ -15,7 +13,7 @@ class Header extends Component {
             <div>
                 <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                     <Container>
-                        <NavbarBrand href="/">
+                        <Navbar.Brand href="/">
                             <img
                                 src={logo}
                                 width="30"
@@ -23,14 +21,14 @@ class Header extends Component {
                                 className="d-inline-block align-top"
                                 alt="logo"
                             /> React site demo
-                        </NavbarBrand>
-                        <NavbarToggle aria-controls="responsive-navbar-nav" />
-                        <NavbarCollapse id="responsive-navbar-nav">
+                        </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <NavLink href="/"> Home </NavLink>
-                                <NavLink href="about/"> About us </NavLink>
-                                <NavLink href="/contacts"> Contacts </NavLink>
-                                <NavLink href="/blog"> Blog </NavLink>
+                                <Nav.Link href="/"> Home </Nav.Link>
+                                <Nav.Link href="about/"> About us </Nav.Link>
+                                <Nav.Link href="/contacts"> Contacts </Nav.Link>
+                                <Nav.Link href="/blog"> Blog </Nav.Link>
                             </Nav>
                             <Form className="d-flex">
                                 <FormControl
@@ -40,7 +38,7 @@ class Header extends Component {
                                 />
                                 <Button variant="outline-info">Search</Button>
                             </Form>
-                        </NavbarCollapse>
+                        </Navbar.Collapse>
                     </Container>
                 </Navbar>
                 <Router>
