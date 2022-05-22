@@ -10,11 +10,11 @@ import libraries from "../assets/About/libraries.jpeg"
 class About extends Component {
     render() {
         return (
-            <Container>
+            <Container className="mt-3">
                 <Tab.Container id="left-tabs" defaultActiveKey="design">
                     <Row>
                         <Col sm={3}>
-                            <Nav variant="pills" className="flex-column mt-2">
+                            <Nav variant="pills" className="flex-column">
                                 <Nav.Item>
                                     <Nav.Link eventKey="design">Design</Nav.Link>
                                 </Nav.Item>
